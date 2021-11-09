@@ -1,0 +1,48 @@
+#include<stdio.h>
+
+void readArray(int[], int);
+int binary_search(int [], int, int, int, int);
+
+int main(){
+        int n; 
+        int ele;
+        int result;
+        printf("Enter the no of elements of the array: \n");
+        scanf("%d", &n);
+        int a[n];
+        readArray(a, n);
+        
+        printf("Enter the element to be searched: \n");
+        scanf("%d", &ele);
+
+        int low = 0;
+        int  high = n-1;
+
+        result = binary_search(a, n, ele, low, high);
+        if(result != -1){
+                printf("Element found at %d position", result);
+        }
+        else{
+                printf("Element not found");
+        }
+}
+
+void readArray(int a[], int n){
+        for(int i = 0; i < n; i++){
+                scanf("%d", &a[i]);
+        }
+}
+binary_search(int a[], int n, int ele, int low, int high){
+        int mid;
+        while(low<=high){
+                if(a[mid]>ele){
+                        high=mid-1;
+                }
+                else if(a[mid]<ele)
+                        high=mid+1;
+                else(a[midint]=ele);
+                        return mid;
+
+        }
+        return -1;
+}
