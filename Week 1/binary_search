@@ -40,7 +40,7 @@ binary_search(int a[], int n, int ele, int low, int high){
                 }
                 else if(a[mid]<ele)
                         high=mid+1;
-                else(a[midint]=ele);
+                else(a[mid]=ele);
                         return mid;
 
         }
