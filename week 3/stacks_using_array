@@ -61,3 +61,67 @@ int main(){
     }
 
 }
+output:
+1-push
+ 2-pop
+ 3-peek
+ 4-display
+ 5-exit
+Enter your choice1
+enter element to be inserted5
+1-push
+ 2-pop
+ 3-peek
+ 4-display
+ 5-exit
+Enter your choice1
+enter element to be inserted10
+1-push
+ 2-pop
+ 3-peek
+ 4-display
+ 5-exit
+Enter your choice1
+enter element to be inserted15
+1-push
+ 2-pop
+ 3-peek
+ 4-display
+ 5-exit
+Enter your choice1
+enter element to be inserted20
+1-push
+ 2-pop
+ 3-peek
+ 4-display
+ 5-exit
+Enter your choice1
+enter element to be inserted25
+1-push
+ 2-pop
+ 3-peek
+ 4-display
+ 5-exit
+Enter your choice4
+25
+20
+15
+10
+5
+1-push
+ 2-pop
+ 3-peek
+ 4-display
+ 5-exit
+Enter your choice2
+deleted element is 251-push
+ 2-pop
+ 3-peek
+ 4-display
+ 5-exit
+Enter your choice3
+top element is 201-push
+ 2-pop
+ 3-peek
+ 4-display
+ 5-exit
