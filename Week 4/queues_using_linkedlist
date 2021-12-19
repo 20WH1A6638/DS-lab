@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+        int data;
+        struct node*link;
+};
+struct node*front = NULL, *rear=NULL, *cur;
+void enqueue(){
+        cur = (struct node*)malloc(sizeof(struct node));
+        printf("enter current data");
+        scanf("%d", (cur->data));
+        cur->link=NULL;
+        if(front == NULL){
+                front = rear = cur;
+        }
+        else{
+                rear->link = cur;
+                cur=rear;
+        }
+}
+void dequeue(){
+        if(front == NULL){
+                printf("queue is empty");
+        }
+        else if(front == rear){
+                printf("deleted ele is %d", front->data);
+                front = rear = NULL;
+        }
+        else{
+                printf("deleted ele is %d",front->data);
+               front = front->link;
+        }
+}
+void display(){
+        if(front == NULL){
+                printf("queue is empty");
+        }
+        else{
+                while(cur!=NULL){
+                        printf("%d", cur->data);
+                        cur = cur->link;
+                }
+        }
+}
