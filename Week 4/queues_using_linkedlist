@@ -1,152 +1,102 @@
 #include<stdio.h>
 #include<stdlib.h>
 struct node{
-    int data;
-    struct node*link;
-    };
-struct node*top=NULL,*cur,*temp;
-void push(int ele){
-    cur=(struct node*)malloc(sizeof(struct node));
-    cur->data=ele;
-    if(top==NULL){
-    cur->link=NULL;
-    }
-    else{
-    cur->link=top;
-    }
-    top=cur;
-    }
-int pop(){
-    temp=top;
-    if(top==NULL){
-    printf("stack underflow");
-    }
-    else{
-    top=top->link;
-    return temp->data;
-    free(temp);
-    }
+        int data;
+        struct node*link;
+};
+struct node*front = NULL, *rear=NULL, *cur;
+void enqueue(){
+        cur = (struct node*)malloc(sizeof(struct node));
+        printf("enter current data");
+        scanf("%d", &cur->data);
+        cur->link=NULL;
+        if(front == NULL){
+                front = rear = cur;
+        }
+        else{
+                rear->link = cur;
+                rear = cur;
+        }
 }
-int peek(){
-    return top->data;
+void dequeue(){
+        if(front == NULL){
+                printf("queue is empty");
+        }
+        else if(front == rear){
+                printf("deleted ele is %d", front->data);
+                front = rear = NULL;
+        }
+        else{
+                printf("deleted ele is %d",front->data);
+               front = front->link;
+        }
 }
 void display(){
-    temp=top;
-    while(temp!=NULL){
-    printf("%d\n",temp->data);
-    temp=temp->link;
-}
+        if(front == NULL){
+                printf("queue is empty");
+        }
+        else{
+                cur = front;
+                while(cur!=NULL){
+                        printf("%d\n", cur->data);
+                        cur = cur->link;
+                }
+        }
 }
 int main(){
-    int ele,ch;
+    int ch;
+    int ele;
     while(1){
-        printf("1-push\n 2-pop\n 3-peek\n 4-display\n 5-exit\n");
-        printf("enter choice");
-        scanf("%d",&ch);
+        printf("1-enqueue\n 2-dequeue\n 3-display\n 4-exit\n");
+        printf("enter your choice");
+        scanf("%d", &ch);
         switch(ch){
-        case 1:
-                printf("enter element");
-                scanf("%d",&ele);
-                push(ele);
-                break;
-            case 2:printf("deleted element is %d\n",pop());
-                break;
-            case 3:if(top==NULL){
-            printf("stack underflow");
-            }
-            else{
-            printf("top element is %d\n",peek());
-            }
-            break;
-            case 4:if(top==NULL){
-            printf("stack underflow");
-            }
-            else{
-            display();
-            }
-            break;
-            case 5:
-            exit(0);
-         }
-         }
-         }
-         **OUTPUT**
-1-push
- 2-pop
- 3-peek
- 4-display
- 5-exit
-enter choice1
-enter element5
-1-push
- 2-pop
- 3-peek
- 4-display
- 5-exit
-enter choice1
-enter element10
-1-push
- 2-pop
- 3-peek
- 4-display
- 5-exit
-enter choice1
-enter element15
-1-push
- 2-pop
- 3-peek
- 4-display
- 5-exit
-enter choice1
-enter element20
-1-push
- 2-pop
- 3-peek
- 4-display
- 5-exit
-enter choice4
-20
-15
-10
+            case 1: enqueue();
+                        break;
+            case 2: dequeue();
+                        break;
+            case 3: display();
+                        break;
+            case 4: exit(0);
+        }
+    }
+}
+**OUTPUT**
+1-enqueue
+ 2-dequeue
+ 3-display
+ 4-exit
+enter your choice1
+enter current data5
+1-enqueue
+ 2-dequeue
+ 3-display
+ 4-exit
+enter your choice1
+enter current data10
+1-enqueue
+ 2-dequeue
+ 3-display
+ 4-exit
+enter your choice3
 5
-1-push
- 2-pop
- 3-peek
- 4-display
- 5-exit
-enter choice2
-deleted element is 20
-1-push
- 2-pop
- 3-peek
- 4-display
- 5-exit
-enter choice4
-15
 10
-5
-1-push
- 2-pop
- 3-peek
- 4-display
- 5-exit
-enter choice3
-top element is 15
-1-push
- 2-pop
- 3-peek
- 4-display
- 5-exit
-enter choice4
-15
+1-enqueue
+ 2-dequeue
+ 3-display
+ 4-exit
+enter your choice2
+deleted ele is 51-enqueue
+ 2-dequeue
+ 3-display
+ 4-exit
+enter your choice3
 10
-5
-1-push
- 2-pop
- 3-peek
- 4-display
- 5-exit
-enter choice5
+1-enqueue
+ 2-dequeue
+ 3-display
+ 4-exit
+enter your choice4
 
-Process returned 0 (0x0)   execution time : 42.664 s
-Press any key to continue.        
+Process returned 0 (0x0)   execution time : 28.410 s
+Press any key to continue.
